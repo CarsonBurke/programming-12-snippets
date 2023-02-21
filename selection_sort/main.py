@@ -2,8 +2,8 @@ import sys
 
 """ 
 - For every element of the list do a pass
-- For each pass, take index i -> list length and record i in the sorted list as the smallest value
-- 
+- For each pass, take index i -> list length - 1 as j and record i in the sorted list as the smallest value
+- take the smallest value in the pass and, if lowest j is different from i, swap places between i and lowest j
 """
 
 def sort(list):
