@@ -3,6 +3,10 @@ How to use:
     "node bubble_sort/script.js" while in the repo folder
 */
 
+/**
+ * Does a series of passes (max array length) comparing adjacent elements until all elements are in order
+ * @param {*} array an array of numbers, can be negative
+ */
 function bubbleSort(array) {
 
     const lastIndex = array.length - 1
@@ -11,7 +15,7 @@ function bubbleSort(array) {
     for (let i = 0; i < lastIndex; i++) {
 
         console.log(`Pass ${i + 1}:`)
-        let swap
+        let hasSwapped
 
         for (let j = 0; j < lastIndex - i; j++) {
             totalIterations += 1
@@ -25,10 +29,10 @@ function bubbleSort(array) {
 
             array[j] = val2
             array[j + 1] = val1
-            swap = true
+            hasSwapped = true
         }
 
-        if (!swap) {
+        if (!hasSwapped) {
 
             console.log('   No swap, stopping')
             break
@@ -41,4 +45,4 @@ function bubbleSort(array) {
     console.log('   Sorted array', array)
 }
 
-bubbleSort([6, 2, 1, 8, -10, 6, 100, 4, -4])
+bubbleSort([6, 2, 1, 8, -10, 6, 100, 4, -4, -12])
