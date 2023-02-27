@@ -11,11 +11,13 @@ function bubbleSort(array) {
 
     const lastIndex = array.length - 1
     let totalIterations = 0
+    let hasSwapped = true
+    let i = 0
 
-    for (let i = 0; i < lastIndex; i++) {
+    while (hasSwapped) {
+        hasSwapped = false
 
         console.log(`Pass ${i + 1}:`)
-        let hasSwapped
 
         for (let j = 0; j < lastIndex - i; j++) {
             totalIterations += 1
@@ -32,11 +34,7 @@ function bubbleSort(array) {
             hasSwapped = true
         }
 
-        if (!hasSwapped) {
-
-            console.log('   No swap, stopping')
-            break
-        }
+        i += 1
     }
 
     console.log('Result:')
